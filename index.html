@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>MyTrainingTimer</title>
   </head>
   <body>
     <main>
-      <h1>総トレーニング時間</h1>
-      <p id="totalTime">0 : 00 : 00</p>
-      <section id="announceTime">
-        <h2>トレーニング時間</h2>
-        <p id="trainingTime">00 : 00</p>
-        <h2>休憩時間</h2>
-        <p id="restTime">00 : 00</p>
+      <section class="totalTimeWindow">
+        <h1>総トレーニング時間</h1>
+        <p id="totalTime">0 : 00 : 00</p>
       </section>
-      <button id="btn">Training Start!</button>
+      <section class="setTimeWindow">
+        <div class="trainingTimeWindow">
+          <h2>トレーニング時間(2min)</h2>
+          <p id="trainingTime">00 : 00</p>
+        </div>
+        <div class="restTimeWindow">
+          <h2>休憩時間(3min)</h2>
+          <p id="restTime">00 : 00</p>
+        </div>
+      </section>
+      <button id="s_btn">Training Start!</button>
+      <button id="e_btn">Finish Training.</button>
     </main>
     
     <script src="js/main.js"></script>
