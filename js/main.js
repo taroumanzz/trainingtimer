@@ -7,6 +7,9 @@
   const restTime = document.getElementById('restTime');
   const s_btn = document.getElementById('s_btn');
   const e_btn = document.getElementById('e_btn');
+  const startMusic = new Audio('sounds/startSound.mp3');
+  const endMusic = new Audio('sounds/endSound.mp3');
+  const finishMusic = new Audio('sounds/finishSound.mp3');
 
   // 最初は終了ボタンは非表示
   e_btn.disabled = true;
@@ -48,6 +51,7 @@
       trainingTime.textContent = "00 : 00";
       body.classList.remove('trainingStyle');
       body.classList.add('restStyle');
+      endMusic.play();
       startRestTime = new Date().getTime();
       trainingIndex++;
     } else {
@@ -68,6 +72,7 @@
       restTime.textContent = "00 : 00";
       body.classList.remove('restStyle');
       body.classList.add('trainingStyle');
+      startMusic.play();
       startTrainingTime = new Date().getTime();
       trainingIndex--;
     } else {
@@ -97,6 +102,7 @@
     s_btn.disabled = true;
     e_btn.disabled = false;
     body.classList.add('trainingStyle');
+    startMusic.play();
     
     totalIntervalId = setInterval(checkTotalTime, 1000);
     intervalId = setInterval(choiceTime, 1000);
@@ -108,6 +114,7 @@
     clearInterval(intervalId);
     s_btn.disabled = false;
     e_btn.disabled = true;
+    finishMusic.play();
     body.classList.remove('trainingStyle');
     body.classList.remove('restStyle');
     trainingTime.textContent = "00 : 00";
