@@ -48,10 +48,10 @@
 
     // 2分未満なら継続、2分過ぎたら休憩時間へ移行
     if (elapsedSeconds >= 120){
+      endMusic.play();
       trainingTime.textContent = "00 : 00";
       body.classList.remove('trainingStyle');
       body.classList.add('restStyle');
-      endMusic.play();
       startRestTime = new Date().getTime();
       trainingIndex++;
     } else {
