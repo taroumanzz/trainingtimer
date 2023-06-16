@@ -33,7 +33,7 @@
     const seconds = String(elapsedSeconds % 60).padStart(2, '0');
     const minutes = Math.floor(elapsedSeconds / 60);
 
-    // 60分以上でも正しく表示
+    // 60分以上でも正しく表示されるよう再計算
     const calculatedMinutes = String(minutes - (Math.floor(minutes / 60) * 60)).padStart(2, '0');
 
     const hours = Math.floor(elapsedSeconds / 3600);
