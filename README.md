@@ -10,7 +10,7 @@
 ![resttime](https://github.com/taroumanzz/TrainingTimer/assets/132829933/2a041042-bdf0-4aca-afe2-2c68d21775f7)
 
 # URL
-https://taroumanzz.github.io/TrainingTimer/
+https://taroumanzz.github.io/trainingtimer/
 
 # 使用言語
 1. HTML
