@@ -59,7 +59,7 @@
       const minutes = String(Math.floor(elapsedSeconds / 60)).padStart(2, '0');
   
       trainingTime.textContent = `${minutes} : ${seconds}`;
-    };
+    }
   }
 
   // 各休憩時間を表示
@@ -80,7 +80,7 @@
       const minutes = String(Math.floor(elapsedSeconds / 60)).padStart(2, '0');
   
       restTime.textContent = `${minutes} : ${seconds}`;
-    };
+    }
   }
 
   // トレーニング時間・休憩時間を交互に実行
@@ -89,7 +89,7 @@
       checkTrainingTime();
     } else {
       checkRestTime();
-    };
+    }
   }
 
   // 開始ボタンクリックでタイマーを実行
