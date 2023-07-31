@@ -11,7 +11,7 @@
   const endMusic = new Audio('sounds/endSound.mp3');
   const finishMusic = new Audio('sounds/finishSound.mp3');
 
-  // 最初は終了ボタンは非表示
+  // 最初は終了ボタンを非表示に
   e_btn.disabled = true;
 
   // clearInterval用の識別子
