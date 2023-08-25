@@ -28,6 +28,37 @@
         <button id="e_btn" class="btn">Finish Training.</button>
       </div>
     </main>
+
+    <!-- モーダルウィンドウ -->
+    <div id="mask" class="hidden"></div>
+    <section id="modal" class="hidden">
+      <p>トレーニング時間・休憩時間を選択してください。</p>
+      <form>
+        <div>
+          <fieldset>
+            <legend>トレーニング時間</legend>
+            <label><input type="radio" name="trainingTime" value="1"> 1分</label>
+            <label><input type="radio" name="trainingTime" value="2" checked> 2分</label>
+            <label><input type="radio" name="trainingTime" value="3"> 3分</label>
+            <label><input type="radio" name="trainingTime" value="4"> 4分</label>
+            <label><input type="radio" name="trainingTime" value="5"> 5分</label>
+          </fieldset>
+        </div>
+        <div>
+          <fieldset>
+            <legend>休憩時間</legend>
+            <label><input type="radio" name="restTime" value="1"> 1分</label>
+            <label><input type="radio" name="restTime" value="2"> 2分</label>
+            <label><input type="radio" name="restTime" value="3" checked> 3分</label>
+            <label><input type="radio" name="restTime" value="4"> 4分</label>
+            <label><input type="radio" name="restTime" value="5"> 5分</label>
+          </fieldset>
+        </div>
+      </form>
+      <div id="close">
+        閉じる
+      </div>
+    </section>
     
     <script src="js/main.js"></script>
   </body>

@@ -10,6 +10,36 @@
   const startMusic = new Audio('sounds/startSound.mp3');
   const endMusic = new Audio('sounds/endSound.mp3');
   const finishMusic = new Audio('sounds/finishSound.mp3');
+  const close = document.getElementById('close');
+
+  //トレーニング時間・休憩時間の選択画面を表示
+  selectTrainingTime();
+
+  //トレーニング時間・休憩時間の取得用変数
+  let selectedTrainingTime;
+  let selectedRestTime;
+
+  const radioTrainingTime = document.getElementsByName('trainingTime');
+  const radioRestTime = document.getElementsByName('restTime');
+  
+  close.addEventListener('click', () => {
+    //トレーニング時間を取得
+    for (let i = 0; i < radioTrainingTime.length; i++) {
+      if (radioTrainingTime[i].checked) {
+        selectedTrainingTime = radioTrainingTime[i].value;
+      }
+    }
+    console.log(selectedTrainingTime);
+    //休憩時間を取得
+    for (let i = 0; i < radioRestTime.length; i++) {
+      if (radioRestTime[i].checked) {
+        selectedRestTime = radioRestTime[i].value;
+  
+      }
+    }
+    console.log(selectedRestTime);
+    closeModalwindow();
+  });
 
   // 最初は終了ボタンを非表示に
   e_btn.disabled = true;
@@ -46,8 +76,8 @@
     const elapsedTime = new Date().getTime() - startTrainingTime;
     const elapsedSeconds = Math.floor(elapsedTime / 1000);
 
-    // 2分未満なら継続、2分過ぎたら休憩時間へ移行
-    if (elapsedSeconds >= 120){
+    // 設定時間を過ぎたら休憩時間へ移行
+    if (elapsedSeconds >= selectedTrainingTime * 60){
       trainingTime.textContent = "00 : 00";
       body.classList.remove('trainingStyle');
       body.classList.add('restStyle');
@@ -67,8 +97,8 @@
     const elapsedTime = new Date().getTime() - startRestTime;
     const elapsedSeconds = Math.floor(elapsedTime / 1000);
 
-    // 3分未満なら継続、3分過ぎたらトレーニング時間へ移行
-    if (elapsedSeconds >= 180){
+    // 設定時間を過ぎたらトレーニング時間へ移行
+    if (elapsedSeconds >= selectedRestTime * 60){
       restTime.textContent = "00 : 00";
       body.classList.remove('restStyle');
       body.classList.add('trainingStyle');
@@ -120,4 +150,16 @@
     trainingTime.textContent = "00 : 00";
     restTime.textContent = "00 : 00";
   });
+
+  // モーダルウィンドウでトレーニング時間を選択
+  function selectTrainingTime (){
+    mask.classList.remove('hidden');
+    modal.classList.remove('hidden');
+  }
+
+  // モーダルウィンドウを閉じる
+  function closeModalwindow (){
+    mask.classList.add('hidden');
+    modal.classList.add('hidden');
+  }
 }
