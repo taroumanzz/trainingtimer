@@ -8,24 +8,34 @@
     <title>MyTrainingTimer</title>
   </head>
   <body>
+    <!-- タイマー画面 -->
     <main>
-      <section class="totalTimeWindow">
-        <h1>総トレーニング時間</h1>
-        <p id="totalTime">0 : 00 : 00</p>
+      <section class="totalWindow">
+        <div class="totalTimeWindow">
+          <h1>総トレーニング時間</h1>
+          <p id="totalTime">0 : 00 : 00</p>
+        </div>
+        <div class="setNumWindow">
+          <h1>総セット数</h1>
+          <p id="setNum">0 セット</p>
+        </div>
       </section>
+
       <section class="setTimeWindow">
         <div class="trainingTimeWindow">
-          <h2>セット時間(2min)</h2>
+          <h2 id="setTimeStr">セット時間</h2>
           <p id="trainingTime">00 : 00</p>
         </div>
         <div class="restTimeWindow">
-          <h2>休憩時間(3min)</h2>
+          <h2 id="restTimeStr">休憩時間</h2>
           <p id="restTime">00 : 00</p>
         </div>
       </section>
+
       <div class="btns">
-        <button id="s_btn" class="btn">Training Start!</button>
-        <button id="e_btn" class="btn">Finish Training.</button>
+        <button id="s_btn" class="btn">スタート</button>
+        <button id="e_btn" class="btn">終了</button>
+        <button id="t_btn" class="btn">時間を再設定</button>
       </div>
     </main>
 
@@ -34,9 +44,10 @@
     <section id="modal" class="hidden">
       <p>トレーニング時間・休憩時間を選択してください。</p>
       <form>
+        <!-- セット時間選択肢 -->
         <div>
           <fieldset>
-            <legend>トレーニング時間</legend>
+            <legend>セット時間</legend>
             <label><input type="radio" name="trainingTime" value="1"> 1分</label>
             <label><input type="radio" name="trainingTime" value="2" checked> 2分</label>
             <label><input type="radio" name="trainingTime" value="3"> 3分</label>
@@ -44,6 +55,7 @@
             <label><input type="radio" name="trainingTime" value="5"> 5分</label>
           </fieldset>
         </div>
+        <!-- 休憩時間選択肢 -->
         <div>
           <fieldset>
             <legend>休憩時間</legend>
@@ -55,8 +67,9 @@
           </fieldset>
         </div>
       </form>
+      
       <div id="close">
-        閉じる
+        トレーニングを開始する
       </div>
     </section>
     

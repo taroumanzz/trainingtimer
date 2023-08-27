@@ -3,19 +3,26 @@
 {
   const body = document.querySelector('body');
   const totalTime = document.getElementById('totalTime');
+  const setNum = document.getElementById('setNum');
   const trainingTime = document.getElementById('trainingTime');
   const restTime = document.getElementById('restTime');
+  const setTimeStr = document.getElementById('setTimeStr');
+  const restTimeStr = document.getElementById('restTimeStr');
+
   const s_btn = document.getElementById('s_btn');
   const e_btn = document.getElementById('e_btn');
+  const t_btn = document.getElementById('t_btn');
+
   const startMusic = new Audio('sounds/startSound.mp3');
   const endMusic = new Audio('sounds/endSound.mp3');
   const finishMusic = new Audio('sounds/finishSound.mp3');
+
   const close = document.getElementById('close');
 
-  //トレーニング時間・休憩時間の選択画面を表示
+  //セット時間・休憩時間の選択画面を表示
   selectTrainingTime();
 
-  //トレーニング時間・休憩時間の取得用変数
+  //セット時間・休憩時間の取得用変数
   let selectedTrainingTime;
   let selectedRestTime;
 
@@ -23,22 +30,23 @@
   const radioRestTime = document.getElementsByName('restTime');
   
   close.addEventListener('click', () => {
-    //トレーニング時間を取得
+    //選択したセット時間を取得
     for (let i = 0; i < radioTrainingTime.length; i++) {
       if (radioTrainingTime[i].checked) {
         selectedTrainingTime = radioTrainingTime[i].value;
       }
     }
-    console.log(selectedTrainingTime);
-    //休憩時間を取得
+    //選択した休憩時間を取得
     for (let i = 0; i < radioRestTime.length; i++) {
       if (radioRestTime[i].checked) {
         selectedRestTime = radioRestTime[i].value;
-  
       }
     }
-    console.log(selectedRestTime);
+
     closeModalwindow();
+
+    setTimeStr.textContent = `セット時間(${selectedTrainingTime}分)`;
+    restTimeStr.textContent = `休憩時間(${selectedRestTime}分)`;
   });
 
   // 最初は終了ボタンを非表示に
@@ -48,13 +56,16 @@
   let totalIntervalId;
   let intervalId;
 
-  // トレーニング時間・休憩時間の識別に使用
+  // セット時間・休憩時間の識別に使用
   let trainingIndex;
 
   // スタートの基準用変数
   let startTime;
   let startTrainingTime;
   let startRestTime;
+
+  // セット数用変数
+  let setIndex;
   
   // 総トレーニング時間を表示
   function checkTotalTime() {
@@ -71,7 +82,7 @@
     totalTime.textContent = `${hours} : ${calculatedMinutes} : ${seconds}`;
   }
   
-  // 各トレーニング時間を表示
+  // 各セット時間を表示
   function checkTrainingTime() {
     const elapsedTime = new Date().getTime() - startTrainingTime;
     const elapsedSeconds = Math.floor(elapsedTime / 1000);
@@ -102,6 +113,8 @@
       restTime.textContent = "00 : 00";
       body.classList.remove('restStyle');
       body.classList.add('trainingStyle');
+      setIndex++;
+      setNum.textContent = `${setIndex} セット`;
       startMusic.play();
       startTrainingTime = new Date().getTime();
       trainingIndex--;
@@ -113,7 +126,7 @@
     }
   }
 
-  // トレーニング時間・休憩時間を交互に実行
+  // 変数を使ってセット時間・休憩時間を交互に実行
   function choiceTime() {
     if (trainingIndex === 0) {
       checkTrainingTime();
@@ -122,18 +135,21 @@
     }
   }
 
-  // 開始ボタンクリックでタイマーを実行
+  // スタートボタンクリックでタイマーを実行
   s_btn.addEventListener('click', () => {
     startTime = new Date().getTime();
     startTrainingTime = new Date().getTime();
     startRestTime = new Date().getTime();
     trainingIndex = 0
+    setIndex = 1;
 
     s_btn.disabled = true;
+    t_btn.disabled = true;
     e_btn.disabled = false;
     body.classList.add('trainingStyle');
     startMusic.play();
     
+    setNum.textContent = `${setIndex} セット`;
     totalIntervalId = setInterval(checkTotalTime, 1000);
     intervalId = setInterval(choiceTime, 1000);
   });
@@ -143,6 +159,7 @@
     clearInterval(totalIntervalId);
     clearInterval(intervalId);
     s_btn.disabled = false;
+    t_btn.disabled = false;
     e_btn.disabled = true;
     finishMusic.play();
     body.classList.remove('trainingStyle');
@@ -151,7 +168,12 @@
     restTime.textContent = "00 : 00";
   });
 
-  // モーダルウィンドウでトレーニング時間を選択
+  //再設定ボタンで時間を再選択
+  t_btn.addEventListener('click', () => {
+    selectTrainingTime();
+  });
+
+  // 時間設定のモーダルウィンドウを表示
   function selectTrainingTime (){
     mask.classList.remove('hidden');
     modal.classList.remove('hidden');
