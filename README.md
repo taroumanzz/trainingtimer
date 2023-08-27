@@ -7,7 +7,7 @@
 - また最初はタイマーの切り替えもうまく動作しませんでしたが、変数をカウンターとして用いて切り替わるよう対応してあります。
 
 #### 各トレーニング時間・休憩時間を選択 
-![6F4E6421-9981-4596-8646-901ED1466D27_1_105_c](https://github.com/taroumanzz/myportfolio/assets/132829933/0505ba70-021a-46b8-b6c6-0fd54f117417)
+![BB0FF26F-03C9-44F4-8B86-2D36A3A5B5C3](https://github.com/taroumanzz/trainingtimer/assets/132829933/79dc4a23-e272-44b5-89e9-6f6bfe796833)
 
 #### 動作開始前はやる気の出るオレンジ系の背景色にしてあります。  
 ![6F0225E6-8364-4406-AE7E-0D84A46DFE37_1_105_c](https://github.com/taroumanzz/myportfolio/assets/132829933/20779aae-eeae-4089-81be-146c8153362d)
