@@ -9,13 +9,13 @@
 #### 各セット時間・休憩時間を選択 
 ![6F4E6421-9981-4596-8646-901ED1466D27_1_105_c](https://github.com/taroumanzz/myportfolio/assets/132829933/0505ba70-021a-46b8-b6c6-0fd54f117417)
 
-##### 動作開始前はやる気の出るオレンジ系の背景色にしてあります。  
+#### 動作開始前はやる気の出るオレンジ系の背景色にしてあります。  
 ![6F0225E6-8364-4406-AE7E-0D84A46DFE37_1_105_c](https://github.com/taroumanzz/myportfolio/assets/132829933/20779aae-eeae-4089-81be-146c8153362d)
 
-###### トレーニング中は集中やモチベーションアップを狙い、背景色を赤にしてあります。  
+#### トレーニング中は集中やモチベーションアップを狙い、背景色を赤にしてあります。  
 ![FBC6B399-17A6-44DA-94CB-976FEC220B15_1_105_c](https://github.com/taroumanzz/myportfolio/assets/132829933/755eaaaa-cb02-4ae2-955b-c84cff06eab4)
 
-### 休憩中は鎮静効果のある青系の色で、リラックスできるように配慮しました。  
+#### 休憩中は鎮静効果のある青系の色で、リラックスできるように配慮しました。  
 ![367F739F-3AC5-450D-8989-4056DE5C79B1](https://github.com/taroumanzz/myportfolio/assets/132829933/31d2614d-c338-4bf0-a9e7-d321cae8f9ba)
 
 # URL
