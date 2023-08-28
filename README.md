@@ -10,13 +10,13 @@
 ![BB0FF26F-03C9-44F4-8B86-2D36A3A5B5C3](https://github.com/taroumanzz/trainingtimer/assets/132829933/79dc4a23-e272-44b5-89e9-6f6bfe796833)
 
 #### 動作開始前はやる気の出るオレンジ系の背景色にしてあります。  
-![B12B46A1-00F6-4D8A-806E-EF7F1380CBDC](https://github.com/taroumanzz/trainingtimer/assets/132829933/46efa3b2-4a83-4d4e-98a4-2db54c873056)
+![01768173-8745-425C-9F43-8D9BE881E425](https://github.com/taroumanzz/trainingtimer/assets/132829933/c81bf08a-7cf4-4b4c-abd2-1e94c1ed76e4)
 
 #### トレーニング中は集中やモチベーションアップを狙い、背景色を赤にしてあります。  
-![83583D95-C4A4-4B21-8A0A-9A47AF06E86C](https://github.com/taroumanzz/trainingtimer/assets/132829933/0446579b-ce4a-4f84-beb4-ad44b88560fb)
+![6A6B871D-0845-44E2-B839-5695E20D2773](https://github.com/taroumanzz/trainingtimer/assets/132829933/d9b7a30d-1bc7-417d-9472-a4b0b1323d96)
 
 #### 休憩中は鎮静効果のある青系の色で、リラックスできるように配慮しました。  
-![C74DEE83-60F3-43EB-9897-7E1A8495FC12](https://github.com/taroumanzz/trainingtimer/assets/132829933/fed6877a-4d89-4ffd-b8be-bd99185b9208)
+![4E05797B-BF71-47E0-BC3A-A8657E9635D4](https://github.com/taroumanzz/trainingtimer/assets/132829933/2addcf87-67f9-486b-9b41-8dd41523d469)
 
 # URL
 https://taroumanzz.github.io/trainingtimer/
