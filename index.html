@@ -23,7 +23,7 @@
 
       <section class="setTimeWindow">
         <div class="trainingTimeWindow">
-          <h2 id="setTimeStr">セット時間</h2>
+          <h2 id="setTimeStr">トレーニング時間</h2>
           <p id="trainingTime">00 : 00</p>
         </div>
         <div class="restTimeWindow">
@@ -36,6 +36,7 @@
         <button id="s_btn" class="btn">スタート</button>
         <button id="e_btn" class="btn">終了</button>
         <button id="t_btn" class="btn">時間を再設定</button>
+        <button id="n_btn" class="btn">休憩終了</button>
       </div>
     </main>
 
@@ -44,10 +45,10 @@
     <section id="modal" class="hidden">
       <p>トレーニング時間・休憩時間を選択してください。</p>
       <form>
-        <!-- セット時間選択肢 -->
+        <!-- トレーニング時間選択肢 -->
         <div>
           <fieldset>
-            <legend>セット時間</legend>
+            <legend>トレーニング時間</legend>
             <label><input type="radio" name="trainingTime" value="1"> 1分</label>
             <label><input type="radio" name="trainingTime" value="2" checked> 2分</label>
             <label><input type="radio" name="trainingTime" value="3"> 3分</label>
