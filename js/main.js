@@ -9,10 +9,11 @@
   const setTimeStr = document.getElementById('setTimeStr');
   const restTimeStr = document.getElementById('restTimeStr');
 
-  const s_btn = document.getElementById('s_btn');
-  const e_btn = document.getElementById('e_btn');
-  const t_btn = document.getElementById('t_btn');
-  const n_btn = document.getElementById('n_btn');
+  const startBtn = document.getElementById('startBtn');
+  const endBtn = document.getElementById('endBtn');
+  const restBtn = document.getElementById('restBtn');
+  const trainingBtn = document.getElementById('trainingBtn');
+  const timeBtn = document.getElementById('timeBtn');
 
   const startMusic = new Audio('sounds/startSound.mp3');
   const endMusic = new Audio('sounds/endSound.mp3');
@@ -51,8 +52,9 @@
   });
 
   // 最初は終了ボタン・休憩終了ボタンを非表示に
-  e_btn.disabled = true;
-  n_btn.disabled = true;
+  endBtn.disabled = true;
+  restBtn.disabled = true;
+  trainingBtn.disabled = true;
 
   // clearInterval用の識別子
   let totalIntervalId;
@@ -86,18 +88,14 @@
   
   // 各トレーニング時間を表示
   function checkTrainingTime() {
-    n_btn.disabled = true;
+    trainingBtn.disabled = true;
+    restBtn.disabled = false;
     const elapsedTime = new Date().getTime() - startTrainingTime;
     const elapsedSeconds = Math.floor(elapsedTime / 1000);
 
     // 設定時間を過ぎたら休憩時間へ移行
     if (elapsedSeconds >= selectedTrainingTime * 60){
-      trainingTime.textContent = "00 : 00";
-      body.classList.remove('trainingStyle');
-      body.classList.add('restStyle');
-      endMusic.play();
-      startRestTime = new Date().getTime();
-      trainingIndex++;
+      finishTraining();
     } else {
       const seconds = String(elapsedSeconds % 60).padStart(2, '0');
       const minutes = String(Math.floor(elapsedSeconds / 60)).padStart(2, '0');
@@ -108,7 +106,8 @@
 
   // 各休憩時間を表示
   function checkRestTime() {
-    n_btn.disabled = false;
+    trainingBtn.disabled = false;
+    restBtn.disabled = true;
     const elapsedTime = new Date().getTime() - startRestTime;
     const elapsedSeconds = Math.floor(elapsedTime / 1000);
 
@@ -133,16 +132,16 @@
   }
 
   // スタートボタンクリックでタイマーを実行
-  s_btn.addEventListener('click', () => {
+  startBtn.addEventListener('click', () => {
     startTime = new Date().getTime();
     startTrainingTime = new Date().getTime();
     startRestTime = new Date().getTime();
     trainingIndex = 0
     setIndex = 1;
 
-    s_btn.disabled = true;
-    t_btn.disabled = true;
-    e_btn.disabled = false;
+    startBtn.disabled = true;
+    timeBtn.disabled = true;
+    endBtn.disabled = false;
     body.classList.add('trainingStyle');
     startMusic.play();
     
@@ -152,30 +151,41 @@
   });
   
   // 終了ボタンでカウントを止め初期値に戻す
-  e_btn.addEventListener('click', () => {
+  endBtn.addEventListener('click', () => {
     clearInterval(totalIntervalId);
     clearInterval(intervalId);
-    s_btn.disabled = false;
-    t_btn.disabled = false;
-    e_btn.disabled = true;
-    n_btn.disabled = true;
+    startBtn.disabled = false;
+    timeBtn.disabled = false;
+    endBtn.disabled = true;
+    restBtn.disabled = true;
+    trainingBtn.disabled = true;
     finishMusic.play();
     body.classList.remove('trainingStyle');
     body.classList.remove('restStyle');
     trainingTime.textContent = "00 : 00";
     restTime.textContent = "00 : 00";
   });
-
-  // 再設定ボタンで時間を再選択
-  t_btn.addEventListener('click', () => {
-    selectTrainingTime();
+  
+  // トレーニング終了ボタンで強制的に休憩時間へ移行
+  restBtn.addEventListener('click', () => {
+    finishTraining();
   });
-
+  
+  // トレーニング時間を終了し、休憩時間へ移行する
+  function finishTraining() {
+    trainingTime.textContent = "00 : 00";
+    body.classList.remove('trainingStyle');
+    body.classList.add('restStyle');
+    endMusic.play();
+    startRestTime = new Date().getTime();
+    trainingIndex++;
+  }
+  
   // 休憩終了ボタンで強制的にトレーニング時間へ移行
-  n_btn.addEventListener('click', () => {
+  trainingBtn.addEventListener('click', () => {
     finishRest();
   });
-
+  
   // 休憩時間を終了し、トレーニング時間へ移行する
   function finishRest() {
     restTime.textContent = "00 : 00";
@@ -187,6 +197,11 @@
     startTrainingTime = new Date().getTime();
     trainingIndex--;
   }
+  
+    // 再設定ボタンで時間を再選択
+    timeBtn.addEventListener('click', () => {
+      selectTrainingTime();
+    });
 
   // 時間設定のモーダルウィンドウを表示
   function selectTrainingTime (){
@@ -199,4 +214,24 @@
     mask.classList.add('hidden');
     modal.classList.add('hidden');
   }
+
+  function btnStr() {
+    if (document.documentElement.clientWidth > 800){
+      restBtn.textContent = "休憩時間へ移行";
+    } else {
+      restBtn.innerHTML = "休憩時間へ<br>移行";
+    }
+  }
+
+  btnStr();
+
+  let timer;
+  window.onresize = function () {
+    if (timer) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(function() {
+      btnStr();
+    }, 200);
+  };
 }

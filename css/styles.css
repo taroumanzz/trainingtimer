@@ -77,6 +77,10 @@ p {
 }
 
 .btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  align-items: center;
   width: 600px;
   margin: 0 auto;
   padding: 20px 0;
@@ -84,11 +88,10 @@ p {
 
 .btn {
   color: #333333;
-  width: 200px;
   height: 70px;
   border: 1px solid #aaa;
   border-radius: 8px;
-  margin: 20px 30px;
+  margin: 20px 0;
   font-size: 20px;
 }
 
@@ -96,25 +99,53 @@ p {
   cursor: pointer;
 }
 
-#s_btn:disabled {
+#startBtn {
+  width: 180px;
+}
+
+#startBtn:disabled {
   cursor: auto;
   background: #dedede;
   color: #bbb;
 }
 
-#e_btn:disabled {
+#endBtn {
+  width: 180px;
+}
+
+#endBtn:disabled {
   cursor: auto;
   background: #dedede;
   color: #bbb;
 }
 
-#t_btn:disabled {
+#restBtn {
+  width: 240px;
+  order: 1;
+}
+
+#restBtn:disabled {
   cursor: auto;
   background: #dedede;
   color: #bbb;
 }
 
-#n_btn:disabled {
+#trainingBtn {
+  width: 240px;
+  order: 1;
+}
+
+#trainingBtn:disabled {
+  cursor: auto;
+  background: #dedede;
+  color: #bbb;
+}
+
+#timeBtn {
+  width: 180px;
+}
+
+#timeBtn:disabled {
   cursor: auto;
   background: #dedede;
   color: #bbb;
@@ -173,6 +204,10 @@ form {
   margin-bottom: 40px;
 }
 
+form > div:nth-child(even) {
+  margin-top: 12px;
+}
+
 label {
   display: inline-block;
   margin: 10px 15px;
@@ -226,16 +261,21 @@ label {
     padding: 5px 0 5px;
   }
 
-  .btn {
+  #startBtn,
+  #endBtn,
+  #restBtn,
+  #trainingBtn {
     margin: 0;
     width: 140px;
   }
 
+  #timeBtn {
+    margin: 0 auto;
+    width: 140px;
+    order: 2;
+  }
+
   .btns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
     width: 300px;
     gap: 10px;
     margin: 10px auto 10px;
