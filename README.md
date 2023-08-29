@@ -7,16 +7,16 @@
 - また最初はタイマーの切り替えもうまく動作しませんでしたが、変数をカウンターとして用いて切り替わるよう対応してあります。
 
 #### 各トレーニング時間・休憩時間を選択 
-![BB0FF26F-03C9-44F4-8B86-2D36A3A5B5C3](https://github.com/taroumanzz/trainingtimer/assets/132829933/79dc4a23-e272-44b5-89e9-6f6bfe796833)
+![7F62DA6F-F96C-4281-A77B-90825FD72E20](https://github.com/taroumanzz/trainingtimer/assets/132829933/f22582a9-99e7-487f-b815-33731cc4ebab)
 
 #### 動作開始前はやる気の出るオレンジ系の背景色にしてあります。  
-![01768173-8745-425C-9F43-8D9BE881E425](https://github.com/taroumanzz/trainingtimer/assets/132829933/c81bf08a-7cf4-4b4c-abd2-1e94c1ed76e4)
+![DA3BA965-0752-4AE9-BE3D-189A86901B13](https://github.com/taroumanzz/trainingtimer/assets/132829933/6ad9d8fa-9276-4141-9535-c5a4fbe12111)
 
 #### トレーニング中は集中やモチベーションアップを狙い、背景色を赤にしてあります。  
-![6A6B871D-0845-44E2-B839-5695E20D2773](https://github.com/taroumanzz/trainingtimer/assets/132829933/d9b7a30d-1bc7-417d-9472-a4b0b1323d96)
+![F6E21ED6-5DC5-41E0-AB52-6F5EEC3F6477](https://github.com/taroumanzz/trainingtimer/assets/132829933/7d4b6727-7043-4df0-bb3d-6581de571de8)
 
 #### 休憩中は鎮静効果のある青系の色で、リラックスできるように配慮しました。  
-![4E05797B-BF71-47E0-BC3A-A8657E9635D4](https://github.com/taroumanzz/trainingtimer/assets/132829933/2addcf87-67f9-486b-9b41-8dd41523d469)
+![ED03EEDE-959A-4AC4-92D6-62635D5CAADA](https://github.com/taroumanzz/trainingtimer/assets/132829933/22a22233-68a9-4703-84d9-6a3cdb6d4e0b)
 
 # URL
 https://taroumanzz.github.io/trainingtimer/
