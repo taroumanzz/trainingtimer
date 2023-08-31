@@ -282,6 +282,10 @@ label {
     padding: 10px 0;
   }
 
+  .btn {
+    font-size: 18px;
+  }
+
   #modal {
     width: 340px;
     padding: 30px 10px;

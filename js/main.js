@@ -218,8 +218,10 @@
   function btnStr() {
     if (document.documentElement.clientWidth > 800){
       restBtn.textContent = "休憩時間へ移行";
+      trainingBtn.textContent = "トレーニング時間へ移行";
     } else {
       restBtn.innerHTML = "休憩時間へ<br>移行";
+      trainingBtn.innerHTML = "トレーニング<br>時間へ移行";
     }
   }
 
